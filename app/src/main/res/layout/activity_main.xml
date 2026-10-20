@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgfonfondo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/fondonino"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Crear tarjeta princpal-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contenedor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="30dp"
+        app:cardElevation="35dp"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="#FFF3A8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="345dp">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/cuenta"
+                android:scaleType="fitCenter" />
+
+
+
+            <TextView
+                android:id="@+id/tvtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio de sesión"
+                android:textColor="#141829"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"/>
+
+
+            <EditText
+                android:id="@+id/etcorreo"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_input"
+                android:hint="Correo electrónico/Número"
+                android:paddingStart="20dp"
+                android:paddingEnd="15dp"
+                android:textColor="#333333"
+                android:textColorHint="#BBBBBB"
+                android:inputType="textEmailAddress"/>
+
+
+            <EditText
+                android:id="@+id/etpassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_input"
+                android:hint="Contraseña"
+                android:paddingStart="20dp"
+                android:paddingEnd="15dp"
+                android:textColor="#333333"
+                android:textColorHint="#BBBBBB"
+                android:inputType="textPassword"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="15dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btningresar"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_button"
+                android:layout_marginTop="20dp"
+                android:text="INGRESAR"
+                android:textColor="#FFFFFF"
+                android:textStyle="normal"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tvcrearcuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crear una cuenta ->"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:textColor="#9966FF"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="¿Cómo jugar?"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.- Selecciona el tipo de opción que deseas jugar"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.- Visualiza la imagen, lee y escucha su pronunciación"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3.- Una vez terminado ¡sigue aprendiendo!"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
