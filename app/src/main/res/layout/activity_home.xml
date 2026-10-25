@@ -36,46 +36,41 @@
 
 
 
-        <Button
-            android:id="@+id/btncel"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:text="NUMBERS"
-            android:layout_marginTop="20dp"
-            android:textSize="30dp"
-            android:backgroundTint="#F2C8DD"
-            />
         <ImageButton
             android:id="@+id/btncelo"
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:text="NUMBERS"
 
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:textSize="30dp"
             android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
             android:src="@drawable/boton1"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btnFare"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:text="ANIMALS"
-            android:layout_marginTop="30dp"
-            android:textSize="30dp"
-            android:backgroundTint="#D3DB7F"/>
+            android:text="NUMBERS"
 
-        <Button
+            android:layout_marginTop="40dp"
+            android:textSize="30dp"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:src="@drawable/animals"/>
+
+        <ImageButton
             android:id="@+id/btnIMC"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:text="COLORS"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#A5DBF8"
-            android:textSize="30dp" />
+            android:text="NUMBERS"
 
-
-
+            android:layout_marginTop="40dp"
+            android:textSize="30dp"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:src="@drawable/colors"/>
 
 
 
