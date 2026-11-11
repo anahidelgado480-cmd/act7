@@ -20,9 +20,9 @@ class DictionaryActivity : AppCompatActivity() {
 
         val btncat: ImageButton = findViewById(R.id.btncat)
         val btnDog: ImageButton = findViewById(R.id.btnDog)
-        val btnmono: ImageButton = findViewById(R.id.btnmono)
+        val btnmonkey: ImageButton = findViewById(R.id.btnmonkey)
         val btnfish: ImageButton = findViewById(R.id.btnfish)
-        val btnturtle: ImageButton = findViewById(R.id.btnturtle)
+        val btnhorse: ImageButton = findViewById(R.id.btnhorse)
         val btnjif: ImageButton = findViewById(R.id.btnjif)
 
 
@@ -36,16 +36,16 @@ class DictionaryActivity : AppCompatActivity() {
         }
 
 
-        btnmono.setOnClickListener {
-            fetchWordData("mono")
+        btnmonkey.setOnClickListener {
+            fetchWordData("monkey")
         }
 
         btnfish.setOnClickListener {
             fetchWordData("fish")
         }
 
-        btnturtle.setOnClickListener {
-            fetchWordData("turtle")
+        btnhorse.setOnClickListener {
+            fetchWordData("horse")
         }
 
         btnjif.setOnClickListener {

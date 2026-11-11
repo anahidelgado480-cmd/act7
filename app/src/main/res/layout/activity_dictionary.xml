@@ -48,7 +48,7 @@
             android:src="@drawable/dog" />
 
         <ImageButton
-            android:id="@+id/btnmono"
+            android:id="@+id/btnmonkey"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -70,7 +70,7 @@
             android:src="@drawable/pez" />
 
         <ImageButton
-            android:id="@+id/btnturtle"
+            android:id="@+id/btnhorse"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -78,7 +78,7 @@
             android:layout_margin="8dp"
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
-            android:src="@drawable/turtle"/>
+            android:src="@drawable/horse"/>
 
         <ImageButton
             android:id="@+id/btnjif"
