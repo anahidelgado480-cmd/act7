@@ -40,7 +40,6 @@
             android:id="@+id/btncelo"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:text="NUMBERS"
 
             android:layout_marginTop="30dp"
             android:textSize="30dp"
@@ -49,29 +48,22 @@
             android:src="@drawable/boton1"/>
 
         <ImageButton
-            android:id="@+id/btnFare"
+            android:id="@+id/btnAnimals"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:text="NUMBERS"
-
             android:layout_marginTop="40dp"
-            android:textSize="30dp"
             android:scaleType="centerCrop"
             android:background="@android:color/transparent"
-            android:src="@drawable/animals"/>
+            android:src="@drawable/animals" />
 
         <ImageButton
             android:id="@+id/btnIMC"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:text="NUMBERS"
-
             android:layout_marginTop="40dp"
-            android:textSize="30dp"
             android:scaleType="centerCrop"
             android:background="@android:color/transparent"
-            android:src="@drawable/colors"/>
-
+            android:src="@drawable/colors" />
 
 
 
