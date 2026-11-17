@@ -1,5 +1,6 @@
 package com.example.act7
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -70,6 +71,14 @@ class DictionaryActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 tvApiResult.text = "Error al conectar con la API: ${e.message}"
             }
+
+        }
+        val  btnGuardarApi = findViewById<Button>(R.id.btnGuardarApi)
+
+        btnGuardarApi.setOnClickListener {
+            val ap = Intent(this, GuardarActivity::class.java)
+            startActivity(ap)
         }
     }
+
 }

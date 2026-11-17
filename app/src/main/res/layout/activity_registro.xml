@@ -51,6 +51,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="30dp"/>
 
+
             <EditText
                 android:id="@+id/etnombre"
                 android:layout_width="match_parent"
