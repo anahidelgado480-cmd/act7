@@ -8,9 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 
 class GuardarActivity : AppCompatActivity() {
 
+    private lateinit var dbHelper: DatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guardar)
+
+        // Inicializamos nuestra base de datos SQLite
+        dbHelper = DatabaseHelper(this)
 
         val tvPalabra = findViewById<TextView>(R.id.tvPalabraRecibida)
         val tvFonetica = findViewById<TextView>(R.id.tvFoneticaRecibida)
@@ -22,18 +27,60 @@ class GuardarActivity : AppCompatActivity() {
         val fonetica = intent.getStringExtra("EXTRA_FONETICA") ?: ""
         val categoria = intent.getStringExtra("EXTRA_CATEGORIA") ?: ""
 
-        // Mostrar la información de la API recibida
+        // Generamos un ID único numérico basado en la palabra (para cumplir con las consultas por ID)
+        val idApi = palabra.hashCode().toLong()
+
+        // Mostrar la información de la API recibida en pantalla
         tvPalabra.text = "Palabra: $palabra"
         tvFonetica.text = "Fonética: $fonetica"
         tvCategoria.text = "Categoría: $categoria"
 
-        // Botón simulado para la Base de Datos
+        // ==========================================
+        // 1. VERIFICACIÓN INICIAL (Método del profesor)
+        // ==========================================
+        // Comprobamos si esta palabra del API ya se había guardado antes como favorita
+        val yaExiste = dbHelper.existeFavorito(idApi)
+        if (yaExiste) {
+            btnConfirmarBD.text = "Eliminar de Favoritos"
+        } else {
+            btnConfirmarBD.text = "Guardar en Favoritos"
+        }
+
+        // Botón para realizar la acción en la Base de Datos SQLite
         btnConfirmarBD.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Información de '$palabra' lista para guardar en la BD",
-                Toast.LENGTH_LONG
-            ).show()
+            // Verificamos el estado actual al hacer clic
+            val existeActual = dbHelper.existeFavorito(idApi)
+
+            if (existeActual) {
+                // ==========================================
+                // 2. MÉTODO DE ELIMINACIÓN (Del profesor)
+                // ==========================================
+                val eliminado = dbHelper.eliminarFavorito(idApi)
+                if (eliminado) {
+                    Toast.makeText(this, "Eliminado de tus favoritos", Toast.LENGTH_SHORT).show()
+                    btnConfirmarBD.text = "Guardar en Favoritos"
+                } else {
+                    Toast.makeText(this, "Error al eliminar de la BD", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                // ==========================================
+                // 3. MÉTODO DE REGISTRO (Del profesor)
+                // ==========================================
+                // Guardamos únicamente lo más relevante del API: Palabra, Traducción y Fonética
+                val guardado = dbHelper.guardarFavorito(
+                    idApi = idApi,
+                    palabra = palabra,
+                    traduccion = categoria,
+                    fonetica = fonetica // ¡El dato clave de tu API de fonética!
+                )
+
+                if (guardado) {
+                    Toast.makeText(this, "¡Guardado en favoritos con éxito!", Toast.LENGTH_SHORT).show()
+                    btnConfirmarBD.text = "Eliminar de Favoritos"
+                } else {
+                    Toast.makeText(this, "Error al guardar en la BD", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }

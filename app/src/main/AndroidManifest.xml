@@ -35,10 +35,13 @@
             android:name=".DictionaryActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".GuardarActivity"
             android:exported="false" />
+        <activity
+            android:name=".Numbers"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

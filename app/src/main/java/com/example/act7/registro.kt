@@ -58,7 +58,7 @@ class registro : AppCompatActivity() {
         }
 
         //Llamar  a nuestra base de datos y guadar el resultado de la inserción
-        val resultado = dbHelper.registrarusuario(nombre, correo, password)
+        val resultado = dbHelper.registrarUsuario(nombre, correo, password)
 
         if (resultado) {
             //Si el resultado es verdadero
